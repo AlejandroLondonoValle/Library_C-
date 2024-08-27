@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Library.Models;
 
-[Table("documet_types")]
+[Table("document_types")]
 public class DocumentType
 {
     [Key]

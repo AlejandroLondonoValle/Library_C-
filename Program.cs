@@ -16,7 +16,6 @@ var dbPassword = Environment.GetEnvironmentVariable("DB_PASSWORD");
 //Configurar la conexiona a la Base en MySQL
 var mySqlConnection = $"server={dbHost};port={dbPort};database={dbDatabaseName};uid={dbUser};password={dbPassword}";
 
-
 //Configure database connection
 builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(mySqlConnection, ServerVersion.Parse("8.0.20-mysql")));
 
