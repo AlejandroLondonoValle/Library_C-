@@ -18,7 +18,7 @@ var mySqlConnection = $"server={dbHost};port={dbPort};database={dbDatabaseName};
 
 
 //Configure database connection
-builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(mySqlConnection,ServerVersion.Parse("8.0.20-mysql")));
+builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(mySqlConnection, ServerVersion.Parse("8.0.20-mysql")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
