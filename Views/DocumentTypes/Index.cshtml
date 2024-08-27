@@ -1,3 +1,51 @@
-<div class="text-center">
-    <h1>Este es el Index</h1>
-</div>
+<section>
+    <article class="d-flex justify-content-between">
+        <form class="d-flex " role="search">
+            <input class="form-control me-2" type="search" placeholder="Nombre completo, correo ..."
+                aria-label="Search">
+            <button class="btn btn-outline-success d-flex" type="submit"><i
+                    class="bi bi-search me-2"></i>Buscar</button>
+        </form>
+        <div>
+            <a class="btn btn-primary text-capitalize" role="button" asp-area="" asp-controller="Usuario"
+                asp-action="Create">nuevo</a>
+        </div>
+    </article>
+</section>
+
+<section class="table-responsive-sm">
+    <table class="table table-striped table-hover align-middle caption-top text-capitalize">
+        <caption>Lista de Tipos de Documentos</caption>
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Abreviacion</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col" class="text-center">operaciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var thing in Model)
+            {
+                <tr>
+                    <th scope="row">@thing.Id</th>
+                    <td>@thing.Name</td>
+                    <td>@thing.Abbreviation</td>
+                    <td>@thing.Description</td>
+                    <td class="text-center">
+                        <div class="btn-group gap-2">
+                            <a class="btn btn-info text-capitalize rounded" role="button" asp-area=""
+                                asp-controller="DocumentTypes" asp-action="Details">detalles</a>
+                            <a class="btn btn-warning text-capitalize rounded" role="button" asp-area=""
+                                asp-controller="DocumentTypes" asp-action="Edit">editar</a>
+                            <a class="btn btn-danger text-capitalize rounded" role="button" asp-area=""
+                                asp-controller="DocumentTypes" asp-action="Delete">eliminar</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</section>
